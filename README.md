@@ -41,8 +41,7 @@ Create a kubernetes manifest for a pod which will containa ToDo app container:
 1. Autoscaler should define
     1. Minimum number of pods as 2
     2. Maximum number of pods as 5
-    3. Target CPU utilization as 50%
-    4. Target Memory utilization as 50%
+    3. Autoscale should be triggered by both CPU and Memory
 1. Both new manifests should belong to `mateapp` namespace
 1. `README.md` should be updated with the instructions on how to deploy the app to k8s
 1. `README.md` Should have explained you choice of resources requests and limits
