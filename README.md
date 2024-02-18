@@ -32,12 +32,21 @@ Now you can browse the [API](http://localhost:8000/api/) or start on the [landin
 Create a kubernetes manifest for a pod which will containa ToDo app container:
 
 1. Fork this repository.
-1. Modify pod manifest to deploy a second same pod with a different name.
-1. Add labels to pods “app: todolist”
-1. Create a manifest for a ClusterIP service, which should balance traffic between two pods
-1. Create a manifest for a NodePort service, which should expose an application on a Node Level
-1. Set all env values for the container from pod’s manifest
-1. `README.md` should contain instructions on how to test an app by calling a ClusterIP service DNS from a busybox container
-1. `README.md` file should contain instructions on how to test ToDo application using the service `port-forward` command
-1. `README.md` should contain instruction on how to access an app using a NodePort Service
+1. Create a `deployment.yml` file with a deployment for the app.
+1. Deployment should have
+    1. Strategy: RollingUpdate
+    1. Resource requests and limits
+    1. Pod spec should be same as for pods manifest
+1. Createa a `hpa.yml` file with a Horizontal Pod Autoscaler for the app.
+1. Autoscaler should define
+    1. Minimum number of pods as 2
+    2. Maximum number of pods as 5
+    3. Target CPU utilization as 50%
+    4. Target Memory utilization as 50%
+1. Both new manifests should belong to `mateapp` namespace
+1. `README.md` should be updated with the instructions on how to deploy the app to k8s
+1. `README.md` Should have explained you choice of resources requests and limits
+1. `README.md` Should have explained your choice of HPA configuration
+1. `README.md` Should have explained your strategy configuration (Why such numbers)
+1. `README.md` Should have explained how to access the app after deployment
 1. Create PR with your changes and attach it for validation on a platform.
