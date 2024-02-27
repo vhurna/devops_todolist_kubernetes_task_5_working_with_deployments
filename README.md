@@ -35,7 +35,7 @@ Create a kubernetes manifest for a pod which will containa ToDo app container:
 1. Create a `deployment.yml` file with a deployment for the app.
 1. Deployment should have
     1. Strategy: RollingUpdate
-    1. Resource requests and limits
+    1. Resource requests and limits (in idle state you should have 2 pods running)
     1. Pod spec should be same as for pods manifest
 1. Createa a `hpa.yml` file with a Horizontal Pod Autoscaler for the app.
 1. Autoscaler should define
