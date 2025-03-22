@@ -34,7 +34,7 @@
         spec:
           containers:
             - name: todoapp-container
-              image: your-docker-repo/todo-app:latest 
+              image: vhurana/todoapp:3.0.0 
               ports:
                 - containerPort: 8000
               resources:
